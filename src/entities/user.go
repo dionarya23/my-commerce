@@ -5,7 +5,7 @@ import (
 )
 
 type User struct {
-	ID        int64     `json:"id"`
+	ID        string    `json:"id"`
 	Name      string    `json:"name"`
 	Email     string    `json:"email"`
 	Password  string    `json:"-"`
@@ -16,7 +16,7 @@ type User struct {
 }
 
 type ParamsCreateUser struct {
-	ID    int64
+	ID    string
 	Name  string
 	Email string
 }

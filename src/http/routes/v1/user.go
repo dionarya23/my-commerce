@@ -13,5 +13,4 @@ func (i *V1Routes) MountUser() {
 
 	g.POST("/register", userController.Register)
 	g.POST("/login", userController.Login)
-
 }

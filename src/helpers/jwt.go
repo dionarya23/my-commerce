@@ -13,7 +13,7 @@ type (
 	ParamsGenerateJWT struct {
 		ExpiredInMinute int
 		SecretKey       string
-		UserId          int64
+		UserId          string
 	}
 	ParamsValidateJWT struct {
 		Token     string
@@ -21,7 +21,7 @@ type (
 	}
 	Claims struct {
 		jwt.StandardClaims
-		UserId int64 `json:"user_id,omitempty"`
+		UserId string `json:"user_id,omitempty"`
 	}
 )
 

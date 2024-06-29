@@ -13,7 +13,7 @@ func (i *sUserRepository) IsExists(filters *entities.ParamsCreateUser) (bool, er
 	params := []interface{}{}
 	conditions := []string{}
 
-	if filters.ID != 0 {
+	if filters.ID != "" {
 		conditions = append(conditions, "id = $"+strconv.Itoa(len(params)+1))
 		params = append(params, filters.ID)
 	}

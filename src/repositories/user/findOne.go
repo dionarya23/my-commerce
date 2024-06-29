@@ -14,7 +14,7 @@ func (i *sUserRepository) FindOne(filters *entities.ParamsCreateUser) (*entities
 	params := []interface{}{}
 	conditions := []string{}
 
-	if filters.ID != 0 {
+	if filters.ID != "" {
 		conditions = append(conditions, "id = $"+strconv.Itoa(len(params)+1))
 		params = append(params, filters.ID)
 	}

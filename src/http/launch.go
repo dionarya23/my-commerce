@@ -32,12 +32,14 @@ func (i *Http) Launch() {
 	})
 
 	v1 := v1routes.New(&v1routes.V1Routes{
-		Echo: e.Group(basePath),
-		DB:   i.DB,
+		Echo:        e.Group(basePath),
+		DB:          i.DB,
+		RedisClient: i.RedisClient,
 	})
 
 	v1.MountPing()
 	v1.MountUser()
+	v1.MountCategory()
 
-	e.Logger.Fatal(e.Start(":8080"))
+	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", os.Getenv("SERVER_PORT"))))
 }
