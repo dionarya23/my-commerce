@@ -40,6 +40,7 @@ func (i *Http) Launch() {
 	v1.MountPing()
 	v1.MountUser()
 	v1.MountCategory()
+	v1.MountProduct()
 
 	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", os.Getenv("SERVER_PORT"))))
 }
